@@ -21,6 +21,6 @@ public class ServerHelloInitializer extends ChannelInitializer<SocketChannel> {
     //当请求到服务端 我们需要做解码 相应客户端做编码
     pipeline.addLast("HttpServerCodec",new HttpServerCodec());
     //添加自定义的助手类
-    pipeline.addLast("customerHandler",null);
+    pipeline.addLast("customerHandler",new CustomerHandler());
   }
 }
